@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me</title>
+</head>
+<style>
+    div {
+       text-align: center;
+       margin-top: 200px;
+    }
+    input {
+        padding: 15px;
+        border: 1px solid #000;
+        border-radius: 3px;
+        margin: 0 10px;
+        transform: translateX(-65%);
+    }
+</style>
+<body>
+<div>
+<h2>Đi chơi không babe?</h2>
+<input type="button" value="Có, đi lun" onclick="alert('Dịch như này đi chơi cái gì, ở nhà!')">
+<input id="nobutton" type="button" value="Không đi đâu" style="position: absolute" onmouseover="nohope()">
+</div>
+<script>
+    function nohope() {
+        let x = Math.floor(Math.random() * window.innerWidth);
+        let y = Math.floor(Math.random() * window.innerHeight);
+        document.getElementById('nobutton').style.left = x + 'px';
+        document.getElementById('nobutton').style.top = y + 'px';
+    }
+</script>
+</body>
+</html>

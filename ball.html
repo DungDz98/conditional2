@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ball</title>
+</head>
+<body>
+<img style="width: 100px;position: relative; left: 0px" id="myImage"
+     src="https://images-na.ssl-images-amazon.com/images/I/61Am00PHPDL.jpg"
+     alt="">
+<p>Click button below to move the image to right</p>
+<button type="button" onclick="moveRight()">Click me</button>
+<script>
+
+    function moveRight() {
+        myImage.style.left = parseInt(myImage.style.left) + 10 + 'px';
+    }
+</script>
+</body>
+</html>

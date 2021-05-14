@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        form table {
+            width: 100%;
+        }
+        form table tr, form table td {
+            border: 1px solid #eee;
+        }
+        form table tr:first-child input{
+            height: 50px;
+        }
+        form table tr:not(:first-child) input {
+            height: 60px;
+        }
+        form table tr input {
+            width: 100%;
+            font-size: 16px;
+            display: block;
+            border: 0;
+            cursor: pointer;
+        }
+        form .operator {
+            background-color: orange;
+            color: #fff;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<form id="calculator">
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" name="display" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td><input class="number" type="button" value="1" onclick="display.value += 1"></td>
+            <td><input class="number" type="button" value="2" onclick="display.value += 2"></td>
+            <td><input class="number" type="button" value="3" onclick="display.value += 3"></td>
+            <td><input class="operator" type="button" value="+" onclick="display.value += '+'"></td>
+        </tr><tr>
+            <td><input class="number" type="button" value="4" onclick="display.value += 4"></td>
+            <td><input class="number" type="button" value="5" onclick="display.value += 5"></td>
+            <td><input class="number" type="button" value="6" onclick="display.value += 6"></td>
+            <td><input class="operator" type="button" value="-" onclick="display.value += '-'"></td>
+        </tr>
+        <tr>
+            <td><input class="number" type="button" value="7" onclick="display.value += 7"></td>
+            <td><input class="number" type="button" value="8" onclick="display.value += 8"></td>
+            <td><input class="number" type="button" value="9" onclick="display.value += 9"></td>
+            <td><input class="operator" type="button" value="x" onclick="display.value += '*'"></td>
+        </tr><tr>
+            <td><input class="operator" type="button" value="C" onclick="display.value = ''"></td>
+            <td><input class="operator" type="button" value="0" onclick="display.value += 0"></td>
+            <td><input class="operator" type="button" value="=" onclick="display.value = eval(display.value) "></td>
+            <td><input class="operator" type="button" value="/" onclick="display.value += '/'"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

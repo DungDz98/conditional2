@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice</title>
+    <style>
+       body {
+           background: url("https://1.bp.blogspot.com/-WXSfLvO2X5g/XVeQbdlaaEI/AAAAAAAACmk/P0OkefPnFOIEk0t1OABib6xKPCL1G6MFwCLcBGAs/s1600/gong-ty-5AEFIuud6XI-unsplash.jpg") top center / cover no-repeat;
+       }
+    </style>
+</head>
+<body>
+<img style="position: relative;left: 0; top:0; width: 100px" id="doremon"
+     src="https://img3.thuthuatphanmem.vn/uploads/2019/10/10/hinh-anh-doraemon-chong-chong-tre_033147175.png" alt="">
+<script>
+    window.onkeydown = moveSelection;
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 40:
+                downArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+        }
+    }
+
+    let doremon = document.getElementById('doremon');
+
+    function downArrowPressed() {
+        doremon.style.top = parseInt(doremon.style.top) + 5 + 'px';
+    }
+
+    function upArrowPressed() {
+        doremon.style.top = parseInt(doremon.style.top) - 5 + 'px';
+    }
+
+    function leftArrowPressed() {
+        doremon.style.left = parseInt(doremon.style.left) - 5 + 'px';
+    }
+
+    function rightArrowPressed() {
+        doremon.style.left = parseInt(doremon.style.left) + 5 + 'px';
+    }
+
+</script>
+</body>
+</html>

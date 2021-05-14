@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice1</title>
+</head>
+<body>
+<form name="ex1">
+<input type="text" placeholder="Nhap a" id="a">
+<input type="text" placeholder="Nhap b" id="b">
+<input type="button" onclick="kiemtrachiahet()" value="Test">
+<p id="result1"></p>
+</form>
+<form name="ex2">
+    <input type="text" placeholder="Nhap tuoi cua ban" id="age">
+    <input type="button" value="Test" onclick="testage()">
+    <p id="result2"></p>
+</form>
+<form name="ex3">
+    <input type="text" placeholder="Nhap vao so nguyen bat ki" id="numint">
+    <input type="button" value="Test" onclick="testint()">
+    <p id="result3"></p>
+</form>
+<form name="ex4">
+    <input type="text" placeholder="Nhap vao so dau tien" id="num1">
+    <input type="text" placeholder="Nhap vao so thu 2" id="num2">
+    <input type="text" placeholder="Nhap vao so thu 3" id="num3">
+    <input type="button" value="Test" onclick="findMax()">
+    <p id="result4"></p>
+</form>
+<form name="ex5">
+    <input type="text" placeholder="Nhap diem kt mieng" id="test1">
+    <input type="text" placeholder="Nhap diem kt giua ky" id="test2">
+    <input type="text" placeholder="Nhap diem kt cuoi ky" id="test3">
+    <input type="button" value="Test" onclick="tesths()">
+    <p id="result5"></p>
+</form>
+<form name="ex6">
+    <input type="text" placeholder="Nhap doanh so ban hang" id="turnover">
+    <input type="text" placeholder="Nhap phan tram loi nhuan" id="rate">
+    <input type="button" value="Test" onclick="commission()">
+    <p id="result6"></p>
+</form>
+<form name="ex7">
+    <input type="text" placeholder="Nhap so dien tieu thu" id="elecnumber">
+    <input type="text" placeholder="Nhap don gia" id="elecunit">
+    <input type="button" value="Test" onclick="elecmoney()">
+    <p id="result7"></p>
+</form>
+<script>
+    // Bai 1
+    function kiemtrachiahet() {
+        if (+a.value % +b.value == 0) {
+            result1.innerHTML = 'Co chia het'
+        } else {
+            result1.innerHTML = 'Khong chia het'
+        }
+    }
+    // Bai 2
+    function testage() {
+        if (+age.value >= 15) {
+            result2.innerHTML = 'Ban du tuoi vao lop 10 roi'
+        } else {
+            result2.innerHTML = 'Ban chua du tuoi vao lop 10'
+        }
+    }
+    // Bai 3
+    function testint() {
+        if (+numint.value > 0) {
+            result3.innerHTML = 'So ban nhap la so nguyen duong'
+        } else if (+numint.value < 0) {
+            result3.innerHTML = 'So ban nhap la so nguyen am'
+        } else {
+            result3.innerHTML = 'So ban nhap la so 0'
+        }
+    }
+    // Bai 4
+    function findMax() {
+        if (+num1.value > +num2.value) {
+            if (+num1.value > +num3.value) {
+                result4.innerHTML = 'So lon nhat la: ' + +num1.value;
+            } else {
+                result4.innerHTML = 'So lon nhat la: ' + +num3.value;
+            }
+        } else {
+            if (+num2.value > +num3.value) {
+                result4.innerHTML = 'So lon nhat la: ' + +num2.value;
+            } else {
+                result4.innerHTML = 'So lon nhat la: ' + +num3.value;
+            }
+        }
+    }
+    // Bai 5
+    function tesths() {
+        let gpa = (+test1.value + test2.value*2 + test3.value*3)/6;
+        if (gpa >= 8) {
+            result5.innerHTML = 'Hoc sinh gioi'
+        } else if (gpa >= 6.5) {
+            result5.innerHTML = 'Hoc sinh Tien tien'
+        } else {
+            result5.innerHTML = 'Hoc sinh TB'
+        }
+    }
+    // Bai 6
+    function commission() {
+        let kq6 = +turnover.value * +rate.value / 100;
+        result6.innerHTML = 'Tien hoa hong nhan duoc la: ' + kq6;
+    }
+    // Bai 7
+    function elecmoney() {
+        let kq7 = +elecnumber.value * +elecunit.value;
+        result7.innerHTML = 'Tien dien nha ban la: ' + kq7;
+    }
+</script>
+</body>
+</html>

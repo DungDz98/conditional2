@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Puzzle</title>
+</head>
+<body>
+<img id="anh1" src="chelsea.jpg" style="width: 250px;" onclick="movepic1()">
+<img id="anh2" src="arsenal.png" style="width: 250px;" onclick="movepic2()">
+<script>
+    let pic1 = document.getElementById('anh1');
+    let pic2 = document.getElementById('anh2');
+
+    function movepic1() {
+        if (pic1.src == 'http://localhost:63342/Ex9/chelsea.jpg') {
+            pic1.src = 'http://localhost:63342/Ex9/arsenal.png'
+        } else {
+            pic1.src = 'http://localhost:63342/Ex9/chelsea.jpg'
+        }
+        if (pic1.src == pic2.src) {
+            console.log('Ban da win');
+        }
+    }
+
+    function movepic2() {
+        if (pic2.src == 'http://localhost:63342/Ex9/chelsea.jpg') {
+            pic2.src = 'http://localhost:63342/Ex9/arsenal.png'
+        } else {
+            pic2.src = 'http://localhost:63342/Ex9/chelsea.jpg'
+        }
+        if (pic2.src == pic1.src) {
+            console.log('Ban da win');
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice2</title>
+</head>
+<body>
+<form name="ex1">
+  <input type="text" placeholder="Nhap do C" id="celsius">
+  <input type="button" value="result" onclick="result1.innerHTML = celsius.value*9/5 +32 +' do F'">
+  <p id="result1"></p>
+</form>
+<form name="ex2">
+  <input type="text" placeholder="Nhap met" id="meter">
+  <input type="button" value="result" onclick="result2.innerHTML = meter.value*3.2808 +' ft'">
+  <p id="result2"></p>
+</form>
+<form name="ex345">
+  <input type="text" placeholder="Nhap canh a" id="a">
+  <input type="text" placeholder="Nhap canh b" id="b">
+  <input type="button" value="result" onclick="acreage()">
+  <p id="result3"></p>
+  <p id="result4"></p>
+  <p id="result5"></p>
+</form>
+<form name="ex67">
+<input type="text" placeholder="Nhap a" id="numbera">
+<input type="text" placeholder="Nhap b" id="numberb">
+<input type="text" placeholder="Nhap c" id="numberc">
+<input type="button" value="result" onclick="resolve()">
+<p id="result67"></p>
+</form>
+<form name="ex8">
+  <input type="text" placeholder="Nhap 1 so bat ky" id="age">
+  <input type="button" value="result" onclick="if (+age.value>0 && +age.value<120) {
+result8.innerHTML = 'Day chinh la tuoi cua 1 nguoi' } else {result8.innerHTML='Day khong phai tuoi 1 nguoi'}">
+  <p id="result8"></p>
+</form>
+<form name="ex9">
+  <input type="text" placeholder="Nhap a" id="dimensiona">
+  <input type="text" placeholder="Nhap b" id="dimensionb">
+  <input type="text" placeholder="Nhap c" id="dimensionc">
+  <input type="button" value="result" onclick="dimension()">
+  <p id="result9"></p>
+</form>
+<form name="ex12">
+  <input type="text" placeholder="Nhap tien gui ban dau" id="money">
+  <input type="text" placeholder="Nhap so ky han tinh lai" id="session">
+  <input type="text" placeholder="Nhap lai suat dinh ky" id="laisuat">
+  <input type="button" value="result" onclick="banking()">
+  <p id="result12"></p>
+</form>
+<script>
+  // Bai 1
+  // Bai 2
+  // Bai 3 4 5
+  function acreage() {
+    let square = a.value**2;
+    let rectangle = +a.value * +b.value;
+    let triangle = rectangle/2;
+    result3.innerHTML = 'Dien tich hinh vuong la: '+square;
+    result4.innerHTML = 'Dien tich hinh chu nhat la: '+rectangle;
+    result5.innerHTML = 'Dien tich hinh tam giac la: '+triangle;
+  }
+  // Bai 6 7
+  function resolve() {
+    if (+numbera.value == 0) {
+      result67.innerHTML = 'PT bac nhat co nghiem x =  '+ -numberc.value/numberb.value;
+    } else {
+      let denta = numberb.value**2 - 4*numberc.value*numbera.value;
+      if (denta==0) {
+        result67.innerHTML = 'PT bac hai co nghiem kep x =  '+ -numberb.value/numbera.value;
+      } else if (denta<0) {
+        result67.innerHTML = 'PT bac hai vo nghiem';
+      } else {
+        let x1 = (-numberb.value + Math.sqrt(denta))/(2*numbera.value);
+        let x2 = (-numberb.value - Math.sqrt(denta))/(2*numbera.value);
+        result67.innerHTML = 'PT bac hai co 2 nghiem kep x1 =  '+ x1 + ' , '+ 'x2 = '+ x2;
+      }
+
+    }
+  }
+  // Bai 8
+  // Bai 9
+  function dimension() {
+    let da = dimensiona.value*1;
+    let db = dimensionb.value*1;
+    let dc = dimensionc.value*1;
+    if (da>0&&db>0&&dc>0&&((da+db)>dc)&&((db+dc)>da)&&((da+dc)>db)) {
+      result9.innerHTML = '3 canh nay chinh la 3 canh cua tam giac'
+    } else {
+      result9.innerHTML = '3 canh nay khong phai la 3 canh cua tam giac'
+    }
+  }
+  // Bai 12
+  function banking() {
+    let lastmoney = +money.value*(1+laisuat.value*1)**(session.value*1);
+    result12.innerHTML = 'So tien ca von lan lai sau '+ session.value + ' la: '+ lastmoney;
+  }
+</script>
+</body>
+</html>
